@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchComments, addComment, deleteComment } from './cs';
+import { fetchComments, addComment, deleteComment } from './commentsSlice';
 
 const PostPage = () => {
     const { postId } = useParams();
