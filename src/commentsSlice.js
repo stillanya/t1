@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchComments = createAsyncThunk(
     'comments/fetchComments',
     async (postId) => {
-        const response = await axios.get(`https://dummyjson.com/docs/posts/${postId}/comments`);
+        const response = await axios.get(`https://dummyjson.com/posts/${postId}/comments`);
         return response.data;
     }
 );
@@ -12,7 +12,7 @@ export const fetchComments = createAsyncThunk(
 export const addComment = createAsyncThunk(
     'comments/addComment',
     async ({ postId, body }) => {
-        const response = await axios.post(`https://dummyjson.com/docs/posts/${postId}/comments`, { body });
+        const response = await axios.post(`https://dummyjson.com/posts/${postId}/comments`, { body });
         return response.data;
     }
 );
@@ -20,7 +20,7 @@ export const addComment = createAsyncThunk(
 export const deleteComment = createAsyncThunk(
     'comments/deleteComment',
     async (commentId) => {
-        await axios.delete(`https://dummyjson.com/docs/comments/${commentId}`);
+        await axios.delete(`https://dummyjson.com/comments/${commentId}`);
         return commentId;
     }
 );
